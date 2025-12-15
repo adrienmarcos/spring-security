@@ -35,3 +35,7 @@ build/
 ## Env ##
 docker/.env
 src/main/resources/application-local.properties
+
+## SSL ##
+src/main/resources/app.key
+src/main/resources/app.pub
