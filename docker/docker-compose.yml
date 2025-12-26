@@ -2,9 +2,9 @@ services:
   mysql:
     image: mysql
     ports:
-      - "3306:3306"
-    expose:
-      - "3306"
+      - "3307:3306"
+#    expose:
+#      - "3306"
     environment:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_USER_PASSWORD}

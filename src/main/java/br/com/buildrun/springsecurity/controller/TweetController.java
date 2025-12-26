@@ -1,0 +1,43 @@
+package br.com.buildrun.springsecurity.controller;
+
+import br.com.buildrun.springsecurity.controller.dto.CreateTweetDto;
+import br.com.buildrun.springsecurity.entities.Tweet;
+import br.com.buildrun.springsecurity.repository.TweetRepository;
+import br.com.buildrun.springsecurity.repository.UserRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.UUID;
+
+@RestController
+public class TweetController {
+
+    private final TweetRepository tweetRepository;
+    private final UserRepository userRepository;
+
+    public TweetController(TweetRepository tweetRepository, UserRepository userRepository) {
+        this.tweetRepository = tweetRepository;
+        this.userRepository = userRepository;
+    }
+
+    @PostMapping("/tweets")
+    public ResponseEntity<Void> create(
+            @RequestBody CreateTweetDto createTweetDto,
+            JwtAuthenticationToken authenticationToken) {
+        var user = userRepository.findById(UUID.fromString(authenticationToken.getName()))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        var tweet = new Tweet();
+        tweet.setUser(user);
+        tweet.setContent(createTweetDto.content());
+
+        tweetRepository.save(tweet);
+        return ResponseEntity.ok().build();
+    }
+
+}
