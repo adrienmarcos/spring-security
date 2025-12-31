@@ -29,13 +29,3 @@ O projeto demonstra como proteger endpoints baseando-se no perfil do usuário:
 - **Administrativo (ADMIN):** Acesso a rotas de gerenciamento e moderação.
 
 ---
-
-## 🚀 Como Executar o Projeto
-
-### Pré-requisitos
-* Docker e Docker Compose instalados.
-
-### Passos
-1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/seu-usuario/nome-do-seu-repositorio.git](https://github.com/seu-usuario/nome-do-seu-repositorio.git)
