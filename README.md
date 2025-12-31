@@ -4,8 +4,8 @@ Esta é uma API RESTful desenvolvida para fins de estudo, simulando as funcional
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Java 17**
-* **Spring Boot 3**
+* **Java 25**
+* **Spring Boot 4**
 * **Spring Security** (Autenticação e Autorização)
 * **Spring Data JPA**
 * **MySQL** (Banco de dados relacional)
