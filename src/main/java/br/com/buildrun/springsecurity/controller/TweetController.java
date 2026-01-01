@@ -1,6 +1,6 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.CreateTweetDto;
+import br.com.buildrun.springsecurity.controller.dto.tweet.TweetCreateRequest;
 import br.com.buildrun.springsecurity.entities.Role;
 import br.com.buildrun.springsecurity.entities.Tweet;
 import br.com.buildrun.springsecurity.repository.TweetRepository;
@@ -26,7 +26,7 @@ public class TweetController {
 
     @PostMapping("/tweets")
     public ResponseEntity<Void> create(
-            @RequestBody CreateTweetDto createTweetDto,
+            @RequestBody TweetCreateRequest createTweetDto,
             JwtAuthenticationToken authenticationToken) {
 
         var user = userRepository.findById(UUID.fromString(authenticationToken.getName())).orElseThrow(

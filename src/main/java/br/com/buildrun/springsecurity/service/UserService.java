@@ -1,7 +1,7 @@
 package br.com.buildrun.springsecurity.service;
 
-import br.com.buildrun.springsecurity.controller.dto.CreateUserDto;
-import br.com.buildrun.springsecurity.controller.dto.response.UserResponseDto;
+import br.com.buildrun.springsecurity.controller.dto.user.UserCreateRequest;
+import br.com.buildrun.springsecurity.controller.dto.user.UserResponse;
 import br.com.buildrun.springsecurity.entities.Role;
 import br.com.buildrun.springsecurity.entities.User;
 import br.com.buildrun.springsecurity.repository.RoleRepository;
@@ -32,7 +32,7 @@ public class UserService {
     }
 
     @Transactional
-    public void create(CreateUserDto createUserDto) {
+    public void create(UserCreateRequest createUserDto) {
         var userFromDb = userRepository.findByUsername(createUserDto.username());
         if (userFromDb.isPresent()) {
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_CONTENT);
@@ -46,10 +46,10 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public List<UserResponseDto> findAll() {
+    public List<UserResponse> findAll() {
         return userRepository.findAll()
                 .stream()
-                .map(user -> new UserResponseDto(user.getUsername(), user.getRoles()))
+                .map(user -> new UserResponse(user.getUsername(), user.getRoles()))
                 .toList();
     }
 

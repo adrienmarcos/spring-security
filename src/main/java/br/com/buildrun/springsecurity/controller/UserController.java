@@ -1,8 +1,7 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.CreateUserDto;
-import br.com.buildrun.springsecurity.controller.dto.response.UserResponseDto;
-import br.com.buildrun.springsecurity.entities.User;
+import br.com.buildrun.springsecurity.controller.dto.user.UserCreateRequest;
+import br.com.buildrun.springsecurity.controller.dto.user.UserResponse;
 import br.com.buildrun.springsecurity.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,14 +23,14 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<Void> create(@RequestBody CreateUserDto createUserDto) {
+    public ResponseEntity<Void> create(@RequestBody UserCreateRequest createUserDto) {
         userService.create(createUserDto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/users")
     @PreAuthorize("hasAuthority('SCOPE_admin')")
-    public ResponseEntity<List<UserResponseDto>> listUsers() {
+    public ResponseEntity<List<UserResponse>> listUsers() {
         return ResponseEntity.ok(userService.findAll());
     }
 
