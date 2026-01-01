@@ -1,6 +1,6 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.tweet.TweetCreateRequest;
+import br.com.buildrun.springsecurity.dto.tweet.TweetCreateRequest;
 import br.com.buildrun.springsecurity.entities.Role;
 import br.com.buildrun.springsecurity.entities.Tweet;
 import br.com.buildrun.springsecurity.repository.TweetRepository;

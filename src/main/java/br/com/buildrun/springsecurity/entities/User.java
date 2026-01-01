@@ -1,6 +1,6 @@
 package br.com.buildrun.springsecurity.entities;
 
-import br.com.buildrun.springsecurity.controller.dto.login.LoginRequest;
+import br.com.buildrun.springsecurity.dto.login.LoginRequest;
 import jakarta.persistence.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

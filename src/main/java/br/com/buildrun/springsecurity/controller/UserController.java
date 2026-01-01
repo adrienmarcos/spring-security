@@ -1,7 +1,7 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.user.UserCreateRequest;
-import br.com.buildrun.springsecurity.controller.dto.user.UserResponse;
+import br.com.buildrun.springsecurity.dto.user.UserCreateRequest;
+import br.com.buildrun.springsecurity.dto.user.UserResponse;
 import br.com.buildrun.springsecurity.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

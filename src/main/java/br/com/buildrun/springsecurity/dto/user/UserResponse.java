@@ -1,4 +1,4 @@
-package br.com.buildrun.springsecurity.controller.dto.user;
+package br.com.buildrun.springsecurity.dto.user;
 
 import br.com.buildrun.springsecurity.entities.Role;
 import java.util.Set;

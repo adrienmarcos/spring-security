@@ -1,4 +1,4 @@
-package br.com.buildrun.springsecurity.controller.dto.feed;
+package br.com.buildrun.springsecurity.dto.feed;
 
 import java.util.List;
 

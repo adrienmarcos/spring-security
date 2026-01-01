@@ -1,7 +1,7 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.feed.FeedDto;
-import br.com.buildrun.springsecurity.controller.dto.feed.FeedItemDto;
+import br.com.buildrun.springsecurity.dto.feed.FeedDto;
+import br.com.buildrun.springsecurity.dto.feed.FeedItemDto;
 import br.com.buildrun.springsecurity.repository.TweetRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

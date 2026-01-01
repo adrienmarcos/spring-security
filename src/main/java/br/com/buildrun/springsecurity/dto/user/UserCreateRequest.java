@@ -1,4 +1,4 @@
-package br.com.buildrun.springsecurity.controller.dto.user;
+package br.com.buildrun.springsecurity.dto.user;
 
 public record UserCreateRequest(String username, String password) {
 

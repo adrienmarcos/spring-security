@@ -1,7 +1,7 @@
 package br.com.buildrun.springsecurity.controller;
 
-import br.com.buildrun.springsecurity.controller.dto.login.LoginRequest;
-import br.com.buildrun.springsecurity.controller.dto.login.LoginResponse;
+import br.com.buildrun.springsecurity.dto.login.LoginRequest;
+import br.com.buildrun.springsecurity.dto.login.LoginResponse;
 import br.com.buildrun.springsecurity.entities.Role;
 import br.com.buildrun.springsecurity.repository.UserRepository;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
 package br.com.buildrun.springsecurity.service;
 
-import br.com.buildrun.springsecurity.controller.dto.user.UserCreateRequest;
-import br.com.buildrun.springsecurity.controller.dto.user.UserResponse;
+import br.com.buildrun.springsecurity.dto.user.UserCreateRequest;
+import br.com.buildrun.springsecurity.dto.user.UserResponse;
 import br.com.buildrun.springsecurity.entities.Role;
 import br.com.buildrun.springsecurity.entities.User;
 import br.com.buildrun.springsecurity.repository.RoleRepository;
